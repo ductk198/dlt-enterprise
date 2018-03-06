@@ -1,0 +1,58 @@
+/**
+ * Mô tả về class ...
+ *
+ * @author ...
+ */
+function Js_{{MODULE_NAME}}(baseUrl,module,controller){
+  this.module = module;
+  this.baseUrl = baseUrl;
+  this.urlPath = baseUrl + '/' + module + '/' + controller;//Biên public lưu tên module
+}
+
+/**
+ * Hàm load các sử kiện cho màn hình index
+ *
+ * @return void
+ */
+Js_{{MODULE_NAME}}.prototype.loadIndex = function(){
+  var myClass = this;
+  var oForm = 'form#frm{{MODULE_NAME}}_index';
+  myClass.loadList(oForm);
+}
+
+/**
+ * Hàm load các sử kiện cho màn hình khác
+ *
+ * @param oForm (tên form)
+ *
+ * @return void
+ */
+Js_{{MODULE_NAME}}.prototype.loadevent = function(oForm){
+  var myClass = this;
+  
+}
+
+/**
+ * Load màn hình danh sách
+ *
+ * @param oForm (tên form)
+ *
+ * @return void
+ */
+Js_{{MODULE_NAME}}.prototype.loadList = function(oForm){
+  var myClass = this;
+  var loadding = EfyLib.loadding();
+  loadding.go(20);
+  var url = myClass.urlPath + '/loadList';
+  var data = $(oForm).serialize();
+  $.ajax({
+      url: url,
+      type: "POST",
+      dataType: 'json',
+      //cache: true,
+      data:data,
+      success: function(arrResult){
+        loadding.go(100); 
+      }
+  });
+}

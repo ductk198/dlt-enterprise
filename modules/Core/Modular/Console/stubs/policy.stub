@@ -1,0 +1,12 @@
+<?php
+
+namespace App\Modules\{{MODULE_NAME}}\Policies;
+
+use Illuminate\Auth\Access\HandlesAuthorization;
+
+class {{POLICY_NAME}}
+{
+    use HandlesAuthorization;
+
+    // Insert here the methods
+}

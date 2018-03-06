@@ -1,0 +1,5 @@
+<?php
+
+Route::get('/', '{{MODULE_NAME}}Controller@index');
+Route::post('loadList', '{{MODULE_NAME}}Controller@loadList');   
+    

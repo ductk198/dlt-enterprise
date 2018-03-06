@@ -1,0 +1,94 @@
+<?php 
+
+namespace Modules\{{LAYOUT_NAME}}\{{MODULE_NAME}}\Controllers;
+
+use Modules\{{LAYOUT_NAME}}\{{MODULE_NAME}}\Requests\{{MODULE_NAME}} as Requests;
+use App\Http\Controllers\Controller;
+use Modules\Core\Efy\Library;
+use Modules\{{LAYOUT_NAME}}\{{MODULE_NAME}}\Models\{{MODULE_NAME}}Model;
+
+/**
+ * Mô tả về class...
+ *
+ * @author ...
+ */
+class {{MODULE_NAME}}Controller extends Controller
+{
+
+	/**
+     * khởi tạo dữ liệu mẫu, Load các file js, css của đối tượng
+     *
+     * @return view
+     */
+	public function index()
+	{
+		$objLibrary = new Library();
+		$arrResult = array();
+        $arrResult =  $objLibrary->_getAllFileJavaScriptCssArray('js','{{LAYOUT_NAME}}/{{MODULE_NAME}}/Js_{{MODULE_NAME}}.js',',',$arrResult);
+        $data['strJsCss'] = json_encode($arrResult);
+		return view("{{MODULE_NAME}}::index",$data);
+	}
+
+	/**
+     * Mô tả về phương thức
+     *
+     * @param Request $request
+     *
+     * @return ....
+     */
+	public function loadlist(Requests $request)
+	{
+		$currentPage = $request->currentPage;
+        $perPage = $request->perPage;
+        // du lieu tra ve dang json
+        return array('success'=> true,'message' => 'success');
+	}
+
+	/**
+     * Mô tả về phương thức
+     *
+     * @param ....
+     *
+     * @return ....
+     */
+	public function add()
+	{
+		//
+	}
+
+	/**
+     * Mô tả về phương thức
+     *
+     * @param ....
+     *
+     * @return ....
+     */
+	public function edit($id)
+	{
+		//
+	}
+
+	/**
+     * Mô tả về phương thức
+     *
+     * @param ....
+     *
+     * @return ....
+     */
+	public function update($id)
+	{
+		//
+	}
+
+	/**
+     * Mô tả về phương thức
+     *
+     * @param ....
+     *
+     * @return ....
+     */
+	public function delete($id)
+	{
+		//
+	}
+}

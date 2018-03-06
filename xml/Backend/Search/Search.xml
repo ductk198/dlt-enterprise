@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<list_body> <!-- Phan than cua danh sach cac doi tuong-->
+			<col>
+				<label>&lt;input type="checkbox" name="chk_all_item_id"  onclick="checkbox_all_item_id(document.forms[0].chk_item_id);"&gt;</label>
+				<type>checkbox</type>
+				<width>5%</width>
+				<align>center</align>
+				<calculate></calculate>
+				<compare_value></compare_value>
+				<xml_data>false</xml_data>
+				<column_name>PK_AUTHORIZED</column_name>
+				<xml_tag_in_db></xml_tag_in_db>
+				<id_column>true</id_column>
+			</col>
+			<col>
+				<label>Tên cán bộ được ủy quyền</label>
+				<type>text</type>
+				<width>40%</width>
+				<align>left</align>
+				<calculate></calculate>
+				<compare_value></compare_value>
+				<xml_data>false</xml_data>
+				<column_name>C_STAFF_NAME_AUTHOZIRED</column_name>
+				<xml_tag_in_db></xml_tag_in_db>
+			</col>
+			<col>
+				<label>Chức năng ủy quyền</label>
+				<type>text</type>
+				<width>40%</width>
+				<align>left</align>
+				<calculate></calculate>
+				<compare_value></compare_value>
+				<xml_data>false</xml_data>
+				<column_name>FUNCTION_NAME</column_name>
+				<xml_tag_in_db></xml_tag_in_db>
+			</col>
+			<col>
+				<label>Thời gian</label>
+				<type>text</type>
+				<width>15%</width>
+				<align>center</align>
+				<calculate></calculate>
+				<compare_value></compare_value>
+				<xml_data>false</xml_data>
+				<column_name>C_OPTION_TIME</column_name>
+				<xml_tag_in_db></xml_tag_in_db>
+			</col>
+	</list_body>
+</root>

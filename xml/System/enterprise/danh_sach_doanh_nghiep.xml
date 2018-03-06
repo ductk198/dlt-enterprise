@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<common_para_list>
+		<common_para>
+			<list_form_title>Danh sách các đối tượng của một loại danh mục</list_form_title>
+			<update_form_title>Cập nhật một đối tượng của một loại danh mục</update_form_title>
+			<first_col_width>20%</first_col_width>
+			<number_of_object_per_page>10</number_of_object_per_page>
+			<js_file_name/>
+			<js_function>set_input()</js_function>
+		</common_para>
+	</common_para_list>
+	<list_of_object>
+		<list_body>
+			<!-- Phan than cua danh sach cac doi tuong-->
+			<col>
+				<label>&lt;input type="checkbox" name="chk_all_item_id"  onclick="checkbox_all_item_id(document.forms[0].chk_item_id);"&gt;</label>
+				<type>checkbox</type>
+				<width>2%</width>
+				<align>center</align>
+				<calculate/>
+				<compare_value/>
+				<xml_data>false</xml_data>
+				<column_name>PK_DLT_ENTERPRISE</column_name>
+				<xml_tag_in_db/>
+				<id_column>true</id_column>
+			</col>
+			<col>
+				<label>Tên doanh nghiệp</label>
+				<type>text</type>
+				<width>38%</width>
+				<align>left</align>
+				<calculate/>
+				<compare_value/>
+				<xml_data>false</xml_data>
+				<column_name>TENCONGTY</column_name>
+				<xml_tag_in_db/>
+			</col>
+			<col>
+				<label>Mã số thuê</label>
+				<type>text</type>
+				<width>10%</width>
+				<align>left</align>
+				<calculate/>
+				<!--Co the khai bao cach tinh count(dem so pt) sum(Tinh tong cac phan tu)-->
+				<compare_value/>
+				<!--Gia tri so sanh ma cac phan tu can dem phai thoa man-->
+				<xml_data>false</xml_data>
+				<column_name>MASOTHUE</column_name>
+				<xml_tag_in_db/>
+			</col>
+			<col>
+				<label>Địa chỉ</label>
+				<type>text</type>
+				<width>30%</width>
+				<align>center</align>
+				<calculate/>
+				<compare_value/>
+				<xml_data>false</xml_data>
+				<column_name>DIACHITRUSOCHINH</column_name>
+				<xml_tag_in_db/>
+			</col>
+			<col>
+				<label>Người đại diện</label>
+				<type>text</type>
+				<width>30%</width>
+				<align>center</align>
+				<calculate/>
+				<compare_value/>
+				<xml_data>false</xml_data>
+				<column_name>NGUOIDAIDIEN</column_name>
+				<xml_tag_in_db/>
+			</col>
+			
+		</list_body>
+	</list_of_object>
+</root>

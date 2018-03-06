@@ -1,0 +1,24 @@
+<?php
+
+return [
+    'listtype' => 'Danh mục',
+    'list' => 'DANH SÁCH CÁC LOẠI DANH MỤC',
+    'code' => 'Mã loại danh mục',
+    'name' => 'Tên loại danh mục',
+    'order' => 'Thứ tự hiển thị',
+    'addgroup' => 'CẬP NHẬT NHÓM CHỨC VỤ',
+    'add' => 'CẬP NHẬT CHỨC VỤ',
+    'xml' => 'File Xml mô tả',
+    'status' => 'Trạng thái',
+    'activate' => 'Hoạt động',
+    'not_activate' => 'Không hoạt động',
+    /*
+      |----------------------------------------------------------------------
+      | Các thông báo
+      |----------------------------------------------------------------------
+     */
+    'succes' => 'Cập nhật thành công',
+    'error' => 'Cập nhật thất bại',
+    'required' => 'Không được để trống.',
+    'select_xml' => '-- Chọn file xml mô tả --',
+];

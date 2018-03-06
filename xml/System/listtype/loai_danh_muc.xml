@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<common_para_list>
+		<common_para>
+			<list_form_title>Danh sách các đối tượng của một loại danh mục</list_form_title>
+			<update_form_title>Cập nhật một đối tượng của một loại danh mục</update_form_title>
+			<first_col_width>20%</first_col_width>
+			<number_of_object_per_page>10</number_of_object_per_page>
+			<js_file_name></js_file_name>
+			<js_function>set_input()</js_function>
+		</common_para>
+	</common_para_list>
+	<list_of_object>
+		<table_struct_of_filter_form>   <!--xac dinh cau truc table cua form chua cac tieu thuc loc du lieu-->
+			<filter_row_list> <!--Phan Danh sach tieu thuc loc du lieu-->
+				<filter_row>
+					<have_line_before></have_line_before>
+					<tag_list>listtype_type</tag_list>
+					<row_id></row_id>
+				</filter_row>				
+				<filter_row>
+					<have_line_before></have_line_before>
+					<tag_list>list_name,tim_ma_doi_tuong</tag_list>
+					<row_id></row_id>
+				</filter_row>				
+			</filter_row_list>
+		</table_struct_of_filter_form>
+		<filter_formfield_list>  <!-- phan mo ta cac dong cua  form chua cac tieu thuc loc du lieu-->
+			<listtype_type>
+				<label>Tìm loại danh mục</label>
+				<type>selectbox</type>
+				<selectbox_option_sql>dbo.EfyLib_ListtypeGetAll 'HOAT_DONG','','#OWNER_CODE#','1','2147483647'</selectbox_option_sql>
+				<selectbox_option_id_column>PK_LISTTYPE</selectbox_option_id_column>
+				<selectbox_option_name_column>C_NAME</selectbox_option_name_column>
+				<selectbox_option_value_column>PK_LISTTYPE</selectbox_option_value_column>
+				<the_first_of_id_value>true</the_first_of_id_value>
+				<data_format></data_format>
+				<width>59.5%</width>
+				<optional>false</optional>
+				<max_length></max_length>
+				<cache_option>true</cache_option><!--Tùy chọn xác định có thiết lập cache dữ liệu truy vấn dữ liệu không? Nếu rỗng thì không thực hiện cache; = true thì thực hiện cache. Tuy nhiên chỉ thiết lập cache với trường hợp truy vấn dữ liệu -->
+				<message>TEN DANH MUC khong duoc de trong</message>
+				<note></note>
+				<js_function_list>myList.ldmod()</js_function_list>
+				<js_action_list>onChange</js_action_list>
+				<xml_data>true</xml_data>
+				<xml_tag_in_db>listtype_type</xml_tag_in_db>
+				<colume_name>FK_LISTTYPE</colume_name>   <!--Ten cot(lay o phan cau lenh ket xuat bao cao) so sanh voi cot lay o phan: selectbox_option_sql lam ma -->
+				<compare_operator>=</compare_operator>
+				<readonly_in_edit_mode>false</readonly_in_edit_mode>
+				<disabled_in_edit_mode>false</disabled_in_edit_mode>
+			</listtype_type>			
+			<list_name>
+				<label>Tìm Tên đối tượng</label>
+				<type>textbox</type>
+				<data_format></data_format>
+				<width>19.4%;</width>
+				<optional>true</optional>
+				<max></max>
+				<min></min>
+				<max_length></max_length>
+				<message></message>
+				<note></note>
+				<js_function_list></js_function_list>
+				<js_action_list></js_action_list>
+				<xml_data>true</xml_data>
+				<xml_tag_in_db>list_name</xml_tag_in_db>
+				<colume_name>C_NAME</colume_name>
+				<compare_operator></compare_operator> 
+				<readonly_in_edit_mode>false</readonly_in_edit_mode>
+				<disabled_in_edit_mode>false</disabled_in_edit_mode>
+			</list_name>	
+			<tim_ma_doi_tuong>
+				<label>Tìm Mã đối tượng</label>
+				<width_label>15%;text-align:left;padding-left:5px;</width_label> 
+				<type>textbox</type>
+				<data_format></data_format>
+				<width>24%</width>
+				<optional>true</optional>
+				<max></max>
+				<min></min>
+				<max_length></max_length>
+				<message></message>
+				<note></note>
+				<js_function_list></js_function_list>
+				<js_action_list></js_action_list>
+				<xml_data>true</xml_data>
+				<xml_tag_in_db>tim_ma_doi_tuong</xml_tag_in_db>
+				<colume_name>C_CODE</colume_name>
+				<compare_operator></compare_operator> 
+				<readonly_in_edit_mode>false</readonly_in_edit_mode>
+				<disabled_in_edit_mode>false</disabled_in_edit_mode>
+			</tim_ma_doi_tuong>						
+		</filter_formfield_list>
+		<list_body> <!-- Phan than cua danh sach cac doi tuong-->
+				<col>
+					<label>&lt;input type="checkbox" name="chk_all_item_id"  onclick="checkbox_all_item_id(document.forms[0].chk_item_id);"&gt;</label>
+					<type>checkbox</type>
+					<width>5%</width>
+					<align>center</align>
+					<calculate></calculate>
+					<compare_value></compare_value>
+					<xml_data>false</xml_data>
+					<column_name>PK_LISTTYPE</column_name>
+					<xml_tag_in_db></xml_tag_in_db>
+					<id_column>true</id_column>
+				</col>
+				<col>
+					<label>Mã loại danh mục</label>
+					<type>text</type>
+					<width>15%</width>
+					<align>left</align>
+					<calculate></calculate>
+					<compare_value></compare_value>
+					<xml_data>false</xml_data>
+					<column_name>C_CODE</column_name>
+					<xml_tag_in_db></xml_tag_in_db>
+				</col>
+				<col>
+					<label>Tên loại danh mục</label>
+					<type>text</type>
+					<width>55%</width>
+					<align>left</align>
+					<calculate></calculate>   <!--Co the khai bao cach tinh count(dem so pt) sum(Tinh tong cac phan tu)-->
+					<compare_value></compare_value> <!--Gia tri so sanh ma cac phan tu can dem phai thoa man-->
+					<xml_data>false</xml_data>
+					<column_name>C_NAME</column_name>
+					<xml_tag_in_db></xml_tag_in_db>
+				</col>
+				<col>
+					<label>Thứ tự</label>
+					<type>text</type>
+					<width>10%</width>
+					<align>center</align>
+					<calculate></calculate>   <!--Co the khai bao cach tinh count(dem so pt) sum(Tinh tong cac phan tu)-->
+					<compare_value></compare_value> <!--Gia tri so sanh ma cac phan tu can dem phai thoa man-->
+					<xml_data>false</xml_data>
+					<column_name>C_ORDER</column_name>
+					<xml_tag_in_db></xml_tag_in_db>
+				</col>
+				<col>
+					<label>Tình trạng</label>
+					<type>text_status</type>
+					<width>15%</width>
+					<align>center</align>
+					<calculate></calculate> 
+					<compare_value></compare_value>
+					<xml_data>false</xml_data>
+					<column_name>C_STATUS</column_name>
+					<xml_tag_in_db></xml_tag_in_db>
+					<php_function></php_function>
+				</col>
+		</list_body>
+	</list_of_object>
+	<!--Phan mo ta cau truc Form cap nhat doi tuong-->
+	<update_object>
+		<table_struct_of_update_form> 
+			<update_row_list>	<!--Phan mo ta cac dong Form cap nhat doi tuong-->
+					<update_row>
+						<have_line_before>false</have_line_before>
+						<tag_list>code</tag_list>
+						<row_id></row_id>
+					</update_row>
+					<update_row>
+						<have_line_before>false</have_line_before>
+						<tag_list>name</tag_list>
+						<row_id></row_id>
+					</update_row>  	
+					<update_row>
+						<have_line_before>false</have_line_before>
+						<tag_list>filexml</tag_list>
+						<row_id></row_id>
+					</update_row>
+					<update_row>
+						<have_line_before>false</have_line_before>
+						<tag_list>list_order</tag_list>
+						<row_id></row_id>
+					</update_row>
+					<update_row>
+						<have_line_before>false</have_line_before>
+						<tag_list>list_status</tag_list>
+						<row_id></row_id>
+					</update_row>		
+					
+			</update_row_list>
+		</table_struct_of_update_form>
+		<update_formfield_list>
+					<code>
+						<label>Mã đối tượng</label>
+						<type>textbox</type>
+						<data_format>text</data_format>
+						<optional>false</optional>
+						<class_view_icon>fa fa-barcode</class_view_icon>
+						<width>20%</width>
+						<max_length>100</max_length>
+						<message>Phai xac dinh MA DOI TUONG</message>
+						<note></note>
+						<only>true</only>
+						<js_function_list></js_function_list>
+						<js_action_list></js_action_list>
+						<xml_data>false</xml_data>
+						<column_name>C_CODE</column_name>
+						<xml_tag_in_db></xml_tag_in_db>
+						<readonly_in_edit_mode>false</readonly_in_edit_mode>
+						<disabled_in_edit_mode>false</disabled_in_edit_mode>
+					</code>
+					<name>
+						<label>Tên đối tượng</label>
+						<type>textbox</type>
+						<data_format>text</data_format>
+						<class_view_icon>fa fa-id-card-o</class_view_icon>
+						<optional>false</optional>
+						<width>60%</width>
+						<max_length>300</max_length>
+						<message>Phai xac dinh TEN DOI TUONG</message>
+						<note></note>
+						<only>true</only>
+						<js_function_list></js_function_list>
+						<js_action_list></js_action_list>
+						<xml_data>false</xml_data>
+						<column_name>C_NAME</column_name>
+						<xml_tag_in_db></xml_tag_in_db>
+						<readonly_in_edit_mode>false</readonly_in_edit_mode>
+						<disabled_in_edit_mode>false</disabled_in_edit_mode>
+					</name>
+					<filexml>
+						<label>File xml mô tả</label>
+						<type>selectbox</type>
+						<data_format>xmlserver</data_format>
+						<class_view_icon>fa fa-list</class_view_icon>
+						<selectbox_option_id_column>code</selectbox_option_id_column>
+						<selectbox_option_name_column>code</selectbox_option_name_column>
+						<selectbox_option_value_column>code</selectbox_option_value_column>
+						<optional>true</optional>
+						<only>false</only>
+						<width></width>
+						<row>3</row>
+						<max_length>200</max_length>
+						<message>Phai xac dinh GHI CHU</message>
+						<note></note>
+						<js_function_list></js_function_list>
+						<js_action_list></js_action_list>
+						<xml_data>false</xml_data>
+						<column_name>C_XML_FILE_NAME</column_name>
+						<xml_tag_in_db></xml_tag_in_db>
+						<readonly_in_edit_mode>false</readonly_in_edit_mode>
+						<disabled_in_edit_mode>false</disabled_in_edit_mode>
+					</filexml>
+					<list_order>
+						<label>Thứ tự hiển thị</label>
+						<type>textbox</type>
+						<data_format>order_list</data_format>
+						<optional>true</optional>
+						<only>false</only>
+						<width>20%</width>
+						<max_length>100</max_length>
+						<message>Thu tu hien thi khong hop le (Phai la so nguyen va nhan gia tri tu 1 den 999)</message>
+						<note></note>
+						<min>0</min>
+						<max>10000</max>
+						<js_function_list></js_function_list>
+						<js_action_list></js_action_list>
+						<xml_data>false</xml_data>
+						<column_name>C_ORDER</column_name>
+						<xml_tag_in_db></xml_tag_in_db>
+						<readonly_in_edit_mode>false</readonly_in_edit_mode>
+						<disabled_in_edit_mode>false</disabled_in_edit_mode>
+					</list_order>
+					<list_status>
+						<label>Trạng thái</label>
+						<label_check>Hoạt động</label_check>
+						<type>checkboxstatus</type>
+						<data_format></data_format>
+						<optional>true</optional>
+						<only>false</only>
+						<width>10%</width>
+						<max_length>100</max_length>
+						<message></message>
+						<note></note>
+						<js_function_list></js_function_list>
+						<js_action_list></js_action_list>
+						<xml_data>false</xml_data>
+						<column_name>C_STATUS</column_name>
+						<xml_tag_in_db></xml_tag_in_db>
+						<readonly_in_edit_mode>false</readonly_in_edit_mode>
+						<disabled_in_edit_mode>false</disabled_in_edit_mode>
+					</list_status>
+		</update_formfield_list>
+		<update_sql>Exec EfyLib_ListUpdate #list_id#, #listtype_id#, '#list_code#', '#list_name#', #list_order#, '#list_status#', '#xml_data#', '#deleted_exist_file_id_list#', '#new_file_id_list#','#p_owner_code_list#'</update_sql>
+	</update_object>
+</root>
